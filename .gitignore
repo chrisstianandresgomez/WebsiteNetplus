@@ -1,4 +1,4 @@
 /apps/migrations/
 /apps/website/migrations/
 /.idea/
-
+/WebsiteNetplus/settings.py
