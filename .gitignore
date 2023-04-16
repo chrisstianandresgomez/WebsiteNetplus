@@ -1,5 +1,13 @@
-/apps/migrations/
-/apps/website/migrations/
-/.idea/
 /WebsiteNetplus/settings.py
+/credenciales.json
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+/.idea
+/.idea/**
 /media/
+/media/**
+#eliminar archivos de github pero conservar en local
+#git rm --cached archivo.ext
+#git rm --cached -r carpeta
+
