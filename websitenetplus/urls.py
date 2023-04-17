@@ -1,5 +1,5 @@
 """
-URL configuration for WebsiteNetplus project.
+URL configuration for websitenetplus project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -19,7 +19,7 @@ from django.urls import path, re_path
 from django.views.static import serve
 
 
-from WebsiteNetplus import settings
+from websitenetplus import settings
 
 import apps.website.views
 

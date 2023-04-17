@@ -1,4 +1,4 @@
-/WebsiteNetplus/settings.py
+/websitenetplus/settings.py
 /credenciales.json
 **/migrations/**
 !**/migrations

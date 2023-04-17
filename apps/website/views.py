@@ -14,8 +14,8 @@ from apps.website.forms import SuggestForm
 from apps.website.functions import MiPaginador
 from apps.website.models import Producto, WebSite, BannerPrincipal, Horario, Email, Telefono, Sugerencias, TipoProducto, \
     EnlacesGubernamentales, CategoriaSobreNosotros
-from WebsiteNetplus import settings
-from WebsiteNetplus.settings import EMAIL_HOST_USER
+from websitenetplus import settings
+from websitenetplus.settings import EMAIL_HOST_USER
 
 
 def view(request):
