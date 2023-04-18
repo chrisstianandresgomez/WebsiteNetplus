@@ -182,7 +182,6 @@
         margin-left: 10px;
         margin-right: 10px;
 }
-    }
 
     .pagination > li > a:hover, .pagination > li > span {
         background-color: #171422!important;
@@ -223,7 +222,7 @@
         margin-right: 10px;
     }
 
-    li_footer a:hover {
+    .li_footer a:hover {
         background-color: #d6111e;
         color: #fff;
         transition: background-color 0.2s ease;
@@ -245,6 +244,14 @@
             text-align: center!important;
             /* etc. */
         }
+        .li_footer {
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 10px;
+        border-bottom: 1px solid #ccc!important;
+        margin: 0;
+        transition: transform 0.2s ease;
+    }
     }
 
     @media only screen and (min-width: 1024px) {
@@ -274,12 +281,9 @@
     <script type='text/javascript' src='/static/wp-includes/js/jquery/jquery.js'></script>
 {#    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>#}
     <link rel='https://api.w.org/' href='/static/wp-json/index.html'/>
-    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd"/>
     <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/static/wp-includes/wlwmanifest.xml"/>
     <meta name="generator" content="WordPress 5.2.17"/>
     <meta name="generator" content="WooCommerce 3.7.3"/>
-    <link rel="canonical" href="/static/index.html"/>
-    <link rel='shortlink' href='/static/index.html'/>
     <link rel="alternate" type="application/json+oembed"
           href="/static/wp-json/oembed/1.0/embed2c37.json?url=http%3A%2F%2Fmirasat.like-themes.com%2F"/>
     <link rel="alternate" type="text/xml+oembed"
@@ -324,7 +328,7 @@
 {#FONT AWESOME #}
 
 </head>
-<body class="home page-template page-template-page-templates page-template-full-width page-template-page-templatesfull-width-php page page-id-{{ idmenu }} theme-mirasat woocommerce-no-js tribe-no-js full-width paceloader-enabled no-sidebar wpb-js-composer js-comp-ver-6.0.5 vc_responsive">
+<body class="home page-template page-template-page-templates page-template-page-templates page page-id-{{ idmenu }} theme-mirasat woocommerce-no-js tribe-no-js paceloader-enabled no-sidebar wpb-js-composer js-comp-ver-6.0.5 vc_responsive">
 <div id="ltx-preloader" data-loader="Cargando..."></div>
 <div class="ltx-content-wrapper  transparent">
     <div class="header-wrapper  header-h1   header-parallax{% block classnav %} wrapper-navbar-layout-transparent ltx-pageheader-disabled{% endblock %}">
@@ -387,7 +391,6 @@
                 {% block content %}
 
 
-                    </div>
                 {% endblock %}
             </div>
         </div>
@@ -424,7 +427,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-align-center clearfix">
-                            <h5 class="titulo_footer header ltx-sr-id-like_sc_header_425522001585650458 ltx-sr ltx-sr-effect-fade_in ltx-sr-el-block ltx-sr-delay-0 ltx-sr-duration-1000 ltx-sr-sequences-0 ltx-check-scroll ltx-glitch done" style="color: white" data-text="Enlaces Gubernamentales">Enlaces Gubernamentales</h5>
+                    <h5 class="titulo_footer header ltx-sr-id-like_sc_header_425522001585650458 ltx-sr ltx-sr-effect-fade_in ltx-sr-el-block ltx-sr-delay-0 ltx-sr-duration-1000 ltx-sr-sequences-0 ltx-check-scroll ltx-glitch done" style="color: white" data-text="Enlaces Gubernamentales">Enlaces Gubernamentales</h5>
                     <ul class="ul_footer">
                         {% for enlace in enlaces %}
                         <li class="li_footer"><a href="{{ enlace.url }}" style="color:white">{{ enlace.descripcion }}</a></li>
