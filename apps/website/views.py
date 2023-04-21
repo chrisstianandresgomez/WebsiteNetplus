@@ -4,11 +4,15 @@ from email.message import EmailMessage
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.views import LoginView
 from django.db import transaction
 from django.db.models import Q
 from django.http import JsonResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template.loader import get_template, render_to_string
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
 
 from apps.website.forms import SuggestForm
 from apps.website.functions import MiPaginador
@@ -184,3 +188,33 @@ def send_html_mail(subject, data):
         mailServer.sendmail(settings.EMAIL_HOST_USER, email_to, mensaje.as_string())
     except Exception as ex:
         pass
+
+
+class LoginFormView(LoginView):
+    template_name = 'login.html'
+
+    @method_decorator(csrf_exempt)
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return redirect(settings.LOGIN_REDIRECT_URL)
+        return super().dispatch(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        data = {}
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                data['resp'] = True
+            else:
+                data['error'] = '<strong>Usuario Inactivo </strong>'
+        else:
+            data['error'] = '<strong>Usuario no valido </strong><br> Verifica las credenciales de acceso y vuelve a intentarlo.'
+        return JsonResponse(data)
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        data['title'] = 'Inicio de Sesion'
+        return data

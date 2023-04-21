@@ -26,6 +26,7 @@ import apps.website.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', apps.website.views.view),
+    path('login/', apps.website.views.LoginFormView.as_view(), name='login'),
 ]
 
 urlpatterns += [re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
