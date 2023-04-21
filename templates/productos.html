@@ -173,6 +173,16 @@
         margin-top: -120px!important;
         background-size: 1450px 450px!important
     }
+    @media only screen and (max-width: 767px) {
+        .border-movil {
+             padding-bottom: 120px!important;
+        }
+        .centrar_img {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+        }
+    }
     {% endblock %}
 {% block classnav %} {{ classnav }}{% endblock %}
 {% block hearder_wrapper %}
@@ -199,7 +209,7 @@
 {% block wrapper %}margin-default{% endblock %}
 {% block row_center %}{% endblock %}
 {% block content %}
-        <div class="col-xl-3 col-lg-4  col-md-4 div-sidebar col-sm-6 col-xs-6">
+        <div class="col-xl-3 col-lg-4  col-md-4 div-sidebar col-sm-6 col-xs-12">
         <div id="content-sidebar" class="content-sidebar woocommerce-sidebar widget-area" role="complementary">
             <aside>
                <div class="search-container">
@@ -222,8 +232,8 @@
             </aside>
         </div>
     </div>
-    <div class="col-xl-9 col-lg-8 col-md-8 col-sm-6 col-xs-6 text-page products-column-with-sidebar matchHeight">
-        <div class="row color-gray-row">
+    <div class="col-xl-9 col-lg-8 col-md-8 col-sm-6 col-xs-12 text-page products-column-with-sidebar matchHeight">
+        <div class="row color-gray-row border-movil">
             <div class="col-sm-6">
                 <p> Mostrando 1–{{ totalpagina }} de {{ list_count }} resultados</p>
             </div>
@@ -234,7 +244,7 @@
                 </select>
             </div>
         </div>
-        <div class="row col-lg-12 col-sm-12 col-xs-12">
+        <div class="row col-lg-12 col-sm-12 col-xs-12 {% if not listado %}centrar_img{% endif %}">
             {% for producto in listado %}
                 <div class="col-sm-12 col-xs-12 col-lg-6 margen-card-producto">
                     <div class="item-product">
