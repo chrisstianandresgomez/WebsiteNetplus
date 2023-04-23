@@ -28,7 +28,7 @@ def view(request):
     data['logo_empresa_footer'] = '/static/logo_work.svg'
     data['logo_empresa_header'] = '/static/logo_work.svg'
     data['footer_image'] = "/static/headers/footer-bg.png"
-    data['telefonowhastapp'] = "+593994695413"
+    data['telefonowhastapp'] = "+593979018072"
     data['enlaces'] = EnlacesGubernamentales.objects.all()
     if request.method == 'POST':
         with transaction.atomic():
